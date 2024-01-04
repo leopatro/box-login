@@ -1,0 +1,102 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuário</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('https://usagif.com/wp-content/uploads/gifs/starfall-gif-46.gif') center/cover fixed; /* Adicione o caminho da sua GIF aqui */
+    }
+
+    form {
+      background-color: #1a53a970;
+      opacity: 0.9;
+      box-shadow: 0 0 10px rgba(1, 1, 1, 5);
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%; 
+      height: 42%;
+      max-width: 900px; 
+      text-align: center;
+      margin: 20px; 
+    }
+
+    label {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      font-size: 25px;
+      background-color: #5784a4;
+      border: 1px solid #bdc3c7;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #8f53c485;
+      color: #ffffff;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 25px;
+    }
+  </style>
+</head>
+<body>
+  <form id="userForm">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" required>
+
+    <label for="age">Idade:</label>
+    <input type="number" id="age" required>
+
+    <label for="gender">Gênero:</label>
+    <select id="gender" required>
+      <option value="male">Masculino</option>
+      <option value="female">Feminino</option>
+      <option value="other">Outro</option>
+    </select>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" required>
+
+    <label for="phone">Telefone:</label>
+    <input type="tel" id="phone" required>
+
+    <button type="button" onclick="submitForm()">Enviar</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      if (name && age && gender && email && phone) {
+        alert(`Cadastro enviado!\nNome: ${name}\nIdade: ${age}\nGênero: ${gender}\nE-mail: ${email}\nTelefone: ${phone}`);
+      } else {
+        alert('Por favor, preencha todos os campos.');
+      }
+    }
+  </script>
+</body>
+</html>
